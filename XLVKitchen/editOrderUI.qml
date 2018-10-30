@@ -48,7 +48,7 @@ ApplicationWindow{
             var request = new XMLHttpRequest();
             var orderId = 0;
             orderId = GV.indexOrder;
-            var request_url = "http://api." + GV.serverUrl + ":5000/confirm/order/" + orderId;
+            var request_url = GV.serverUrl + "/confirm/order/" + orderId + "?" + GV.loginInfo;
             var get_request = "GET";
             request.open(get_request, request_url, true);
             request.onreadystatechange = function(){
@@ -64,7 +64,7 @@ ApplicationWindow{
         } else{
             request = new XMLHttpRequest();
             orderId = GV.indexOrder;
-            request_url = "http://api." + GV.serverUrl + ":5000/update_confirm/order/" + orderId;
+            request_url = GV.serverUrl + "/update_confirm/order/" + orderId + "?" + GV.loginInfo;
             get_request = "GET";
             var post_request = "POST";
             request.open(post_request, request_url, true);

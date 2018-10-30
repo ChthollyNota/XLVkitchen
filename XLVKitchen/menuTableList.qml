@@ -79,8 +79,8 @@ ApplicationWindow {
     {
         console.log("Starting request to dataBase...");
         var request = new XMLHttpRequest();
-        var request_url = "http://api." + GV.serverUrl +":5000/get/ingredients"
-        var get_request = "GET"
+        var request_url = GV.serverUrl +"/get/ingredients?" + GV.loginInfo;
+        var get_request = "GET";
         request.open (get_request, request_url, true);
         request.onreadystatechange = function(){
             if (request.readyState === 4 && request.status === 200)
@@ -95,7 +95,7 @@ ApplicationWindow {
     {
         console.log("Checkpoint");
         var request = new XMLHttpRequest();
-        var request_url = "http://api." + GV.serverUrl + ":5000/get/goods"
+        var request_url = GV.serverUrl + "/get/goods?" + GV.loginInfo;
         var get_request = "GET";
         var post_request = "POST";
         request.open(post_request, request_url, true);

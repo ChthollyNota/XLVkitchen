@@ -41,7 +41,7 @@ ApplicationWindow {
     {
         console.log("jsonLoaderCheckpoint");
         var request = new XMLHttpRequest();
-        var request_url = "http://api." + GV.serverUrl +":5000/get/dishes";
+        var request_url = GV.serverUrl +"/get/dishes?" + GV.loginInfo;
         var get_request = "GET";
         var post_request ="POST";
         request.open(post_request, request_url, true);

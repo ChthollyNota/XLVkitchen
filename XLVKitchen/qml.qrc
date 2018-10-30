@@ -5,15 +5,7 @@
         <file>orderList.qml</file>
         <file>orderAdd.qml</file>
         <file>menuList.qml</file>
-        <file>Alcohol.qml</file>
-        <file>Nonalcohol.qml</file>
         <file>DishCreator.qml</file>
-        <file>MainDish.qml</file>
-        <file>Snacks.qml</file>
-        <file>Sushi.qml</file>
-        <file>Rolls.qml</file>
-        <file>Sets.qml</file>
-        <file>WareHouse.qml</file>
         <file>menuTableList.qml</file>
         <file>AcceptingOrder.qml</file>
         <file>GlobalVariables.js</file>
@@ -23,5 +15,6 @@
         <file>editOrder.qml</file>
         <file>startPage.qml</file>
         <file>editOrderUI.qml</file>
+        <file>orderInfo.qml</file>
     </qresource>
 </RCC>

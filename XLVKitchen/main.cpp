@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
-    engine.load(QUrl(QStringLiteral("qrc:/homePage.qml")));
+    engine.load(QUrl(QStringLiteral("qrc:/startPage.qml")));
     if (engine.rootObjects().isEmpty())
         return -1;
 

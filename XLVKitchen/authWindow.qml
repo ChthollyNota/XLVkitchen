@@ -101,7 +101,7 @@ ApplicationWindow {
                 console.log("clicked")
                 console.log(GV.serverUrl);
                 var request = new XMLHttpRequest();
-                var request_url = "http://api." + GV.serverUrl + ":5000/login?login=" + loginTxt.text + "&password=" + passTxt.text;
+                var request_url = GV.serverUrl + "/login?login=" + loginTxt.text + "&password=" + passTxt.text + "&cafe_id=" + GV.cafe_id;
                 var get_request = "GET";
                 var post_request = "POST";
                 //console.log(request_url);
@@ -117,6 +117,7 @@ ApplicationWindow {
                             pageLoader.source = "homePage.qml"
                             GV.login = loginTxt.text;
                             GV.token = token;
+                            GV.loginInfo = "login=" + GV.login + "&token=" + GV.token;
                         }
                         if (dataBase.status === 400) {
                             console.log(dataBase.message);

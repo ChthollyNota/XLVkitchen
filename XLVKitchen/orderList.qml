@@ -16,6 +16,10 @@ ApplicationWindow {
     maximumWidth: screen.width
     visible: true
 
+    Loader{
+        id: pageLoader
+    }
+
     property int number: 0
     //TODO: complete method tableLoader
     //TODO: complete method jsonParse
@@ -26,12 +30,12 @@ ApplicationWindow {
 
     function tableLoader(){
         var request = new XMLHttpRequest();
-        var request_url = "http://api." + GV.serverUrl + ":5000/get/orders";
+        var request_url = GV.serverUrl + "/get/orders?" + GV.loginInfo;
         var request_get = "GET";
 
         request.open(request_get, request_url, true);
         request.onreadystatechange = function(){
-            if (request.readyState === 4)
+            if (request.readyState === 4 && request.status === 200)
             {
                 console.log("Json Parse");
                 jsonParse(request.responseText);
@@ -86,7 +90,10 @@ ApplicationWindow {
 
 
                 onClicked: {
+                        console.log("Clicked " + idshnik);
                         GV.indexOrderList = idshnik;
+                        pageLoader.source = "orderInfo.qml";
+                        appWindow.hide();
                 }
             }
             Label{

@@ -134,7 +134,7 @@ ApplicationWindow{
         var ID = 0;
 
         var request = new XMLHttpRequest();
-        var request_url = "http://api." + GV.serverUrl + ":5000/get/orders";
+        var request_url = GV.serverUrl + "/get/orders?" + GV.loginInfo;
         var request_get = "GET";
 
         request.open(request_get, request_url, true);
@@ -147,7 +147,7 @@ ApplicationWindow{
         request.send();
 
         request = new XMLHttpRequest();
-        request_url = "http://api/" + GV.serverUrl + ":5000/confirm/order/" + ID+1;
+        request_url = "http://" + GV.serverUrl + "/confirm/order/" + ID+1 + "?" + GV.loginInfo;
         request_get = "GET";
 
         request.open(request_get, request_url, true);
@@ -165,7 +165,7 @@ ApplicationWindow{
         var Street = vulica;
         var StreetNumber = vulicaId;
         var Resident = apartaments;
-        var request_url = "http://api." + GV.serverUrl +":5000/make_order"
+        var request_url = GV.serverUrl +"/make_order";
         var request_json = "{"
         request_json = request_json + '"' + "address" + '"' + ":" + '"' + City + " " + Street + " " + StreetNumber + " " + Resident + '"' + ',"name":"' + GV.name + '","phone":"' + GV.phone +  '"';
         request_json = request_json + "," + '"' + "dishes" + '"' + ":[";

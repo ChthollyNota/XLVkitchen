@@ -19,7 +19,7 @@ ApplicationWindow {
     function jsonLoader()
     {
         var request = new XMLHttpRequest();
-        var request_url = "http://api." + GV.serverUrl + ":5000/get/dishes"
+        var request_url = GV.serverUrl + "/get/dishes?" + GV.loginInfo;
         var request_get = "GET"
         request.open(request_get, request_url, true);
         request.onreadystatechange = function(){
@@ -81,6 +81,7 @@ ApplicationWindow {
             if (text === "dessert") {text = "Десерт"}
             if (text === "salad") {text = "Салат"}
             if (text === "main_course") {text = "Главное Блюдо"}
+            if (text === "snack") {text = "Закуски"}
             listModel.append({idshnik: text})
         }
     }

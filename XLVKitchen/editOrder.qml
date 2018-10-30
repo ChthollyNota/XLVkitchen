@@ -1,4 +1,4 @@
-import QtQuick 2.10
+    import QtQuick 2.10
 import QtQuick.Window 2.10
 import QtQuick.Controls 2.3
 import QtQuick.Controls.Material 2.1
@@ -23,7 +23,7 @@ ApplicationWindow{
 
     function menuJsonLoader(){
         var request = new XMLHttpRequest();
-        var request_url = "http://api." + GV.serverUrl + ":5000/get/dishes";
+        var request_url = GV.serverUrl + "/get/dishes?" + GV.loginInfo;
         var get_request = "GET";
         var post_request = "POST";
         request.open(get_request, request_url, true);
@@ -65,7 +65,7 @@ ApplicationWindow{
 
     function orderJsonLoader(){
         var request = new XMLHttpRequest();
-        var request_url = "http://api." + GV.serverUrl + ":5000/get/orders";
+        var request_url = GV.serverUrl + "/get/orders?" + GV.loginInfo;
         var get_request = "GET";
         var post_request = "POST";
         request.open(get_request, request_url, true);

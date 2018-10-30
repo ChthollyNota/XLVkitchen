@@ -35,7 +35,7 @@ var apsNumber = ' ';
 var houseNumber = ' ';
 var cityName = ' ';
 //For connection
-var serverUrl = "xlvzero.tk";
+var serverUrl = "http://xlvzero.tk:5000";
 var flagOnEdit = false;
 var adress = " ";
 //For OrdersList
@@ -56,3 +56,7 @@ for (var index = 0; index <= arrayLength; index++)
 var flag = true;
 
 var status = 200;
+
+var loginInfo;
+
+var cafe_id = 0;
