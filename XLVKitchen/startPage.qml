@@ -94,6 +94,7 @@ ApplicationWindow
                 comboBoxCreator(request.responseText);
             } else {
                 if (request.readyState === 4 && request.status !== 200){
+                    listModel.clear();
                     listModel.append({key: "Не могу загрузить список кафе", value: 0});
                     comboSox.currentIndex = 0;
                     loginButton.visible = false;
@@ -106,6 +107,7 @@ ApplicationWindow
     function comboBoxCreator(response)
     {
         var dataBase = JSON.parse(response);
+        listModel.clear();
         listModel.append({key: "Выберите кафе", value: 0 });
         comboSox.currentIndex = 0;
         loginButton.visible = true;

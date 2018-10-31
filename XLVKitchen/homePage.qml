@@ -69,7 +69,20 @@ ApplicationWindow {
                 homeWindow.hide();
             }
           }
-
+        Button{
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+            Label{
+                anchors.centerIn: parent
+                text: "Администрировать Новый Заказ"
+                font.pixelSize: screen.height * 0.05
+                color: "black"
+            }
+            onClicked: {
+                pageLoader.source = "editOrder.qml";
+                bucketVar.hide();
+            }
+        }
         Button {
             Layout.fillWidth: true
             Layout.fillHeight: true
