@@ -9,6 +9,7 @@ import "GlobalVariables.js" as GV
 ApplicationWindow{
     id: bucketGrid
     height: screen.height
+    color: "#ffffff"
     width: screen.width
     minimumHeight: screen.height * 0.8
     minimumWidth: screen.width * 0.8

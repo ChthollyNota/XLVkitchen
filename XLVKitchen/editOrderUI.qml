@@ -168,7 +168,7 @@ ApplicationWindow{
                 jsonBuild();
                 if (passRec.visible == false){
                 editOrder.hide();
-                pageLoader.source = "bucketVar.qml"
+                pageLoader.source = "homePage.qml"
                 }
             }
         }
